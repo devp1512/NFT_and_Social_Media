@@ -17,11 +17,10 @@ driver = webdriver.Chrome(options=options)
 driver.get("https://opensea.io/rankings")
 index = 1
 
-project_heading = f'//*[@id="main"]/div/div[2]/div/div[2]/div[9]/[@*]'
-project_raw = driver.find_element(By.XPATH, project_heading)
-
 while True:
     try:
+        # problematic code
+        # cannot extract hyperlink
         project_heading = f'//*[@id="main"]/div/div[2]/div/div[2]/div[9]/a'
         project_raw = driver.find_element(By.XPATH, project_heading)
         print(project_raw.text)
